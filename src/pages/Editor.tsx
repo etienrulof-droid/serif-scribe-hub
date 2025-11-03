@@ -126,6 +126,7 @@ export default function Editor() {
         reading_time: readingTime,
         author_id: userId,
         published_at: formData.status === "published" ? new Date().toISOString() : null,
+        scheduled_at: formData.scheduled_at || null,
       };
 
       if (postId) {
