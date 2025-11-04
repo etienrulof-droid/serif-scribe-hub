@@ -8,6 +8,7 @@ import Post from "./pages/Post";
 import Auth from "./pages/Auth";
 import Admin from "./pages/Admin";
 import Editor from "./pages/Editor";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/post/:slug" element={<Post />} />
+          <Route path="/about" element={<About />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/editor" element={<Editor />} />

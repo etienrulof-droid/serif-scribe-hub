@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
-import { Footer } from "@/components/Footer";
 import { PostCard } from "@/components/PostCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -75,7 +74,7 @@ export default function Home() {
               Europees transport
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Discover insights, inspiration, and ideas crafted with care
+              Actueel nieuws en inzichten over Europees wegtransport
             </p>
 
             {/* Search Bar */}
@@ -84,20 +83,20 @@ export default function Home() {
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                 <Input
                   type="text"
-                  placeholder="Search stories..."
+                  placeholder="Zoek artikelen..."
                   className="pl-10"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
               </div>
-              <Button variant="default">Search</Button>
+              <Button variant="default">Zoeken</Button>
             </div>
           </div>
 
           {/* Featured Post */}
           {featuredPost && (
             <div className="mt-16 max-w-5xl mx-auto">
-              <h2 className="text-3xl font-bold font-serif mb-6">Featured Story</h2>
+              <h2 className="text-3xl font-bold font-serif mb-6">Uitgelicht artikel</h2>
               <PostCard
                 id={featuredPost.id}
                 title={featuredPost.title}
@@ -116,13 +115,13 @@ export default function Home() {
       {/* Posts Grid */}
       <section className="py-16 px-4">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold font-serif mb-8">Latest Stories</h2>
+          <h2 className="text-3xl font-bold font-serif mb-8">Laatste artikelen</h2>
           
           {loading ? (
-            <div className="text-center py-12 text-muted-foreground">Loading stories...</div>
+            <div className="text-center py-12 text-muted-foreground">Artikelen laden...</div>
           ) : filteredPosts.length === 0 ? (
             <div className="text-center py-12 text-muted-foreground">
-              {searchQuery ? "No stories found matching your search." : "No stories yet. Check back soon!"}
+              {searchQuery ? "Geen artikelen gevonden." : "Nog geen artikelen beschikbaar."}
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -143,8 +142,6 @@ export default function Home() {
           )}
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }

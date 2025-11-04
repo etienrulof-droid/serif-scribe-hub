@@ -12,7 +12,7 @@ export const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <h1 className="text-2xl font-bold font-serif">Luxe Blog</h1>
+            <h1 className="text-2xl font-bold font-serif">Europees Transport</h1>
           </Link>
 
           {/* Desktop Navigation */}
@@ -20,11 +20,8 @@ export const Navigation = () => {
             <Link to="/" className="text-foreground hover:text-secondary transition-colors">
               Home
             </Link>
-            <Link to="/categories" className="text-foreground hover:text-secondary transition-colors">
-              Categories
-            </Link>
             <Link to="/about" className="text-foreground hover:text-secondary transition-colors">
-              About
+              Over ons
             </Link>
             <Button variant="ghost" size="icon">
               <Search className="h-5 w-5" />
@@ -58,18 +55,11 @@ export const Navigation = () => {
               Home
             </Link>
             <Link
-              to="/categories"
-              className="block py-2 text-foreground hover:text-secondary transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Categories
-            </Link>
-            <Link
               to="/about"
               className="block py-2 text-foreground hover:text-secondary transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              About
+              Over ons
             </Link>
             <Link to="/admin" onClick={() => setIsMenuOpen(false)}>
               <Button variant="default" size="sm" className="w-full">
