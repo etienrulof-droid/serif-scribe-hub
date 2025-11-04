@@ -207,30 +207,6 @@ export default function Post() {
             </div>
           )}
 
-          {/* Author Bio */}
-          {post.author && (
-            <div className="mt-12 p-8 glass-dark rounded-xl">
-              <div className="flex items-start gap-6">
-                {post.author.avatar_url && (
-                  <img
-                    src={post.author.avatar_url}
-                    alt={post.author.full_name}
-                    className="w-20 h-20 rounded-full object-cover"
-                  />
-                )}
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold font-serif mb-2">
-                    {post.author.full_name}
-                  </h3>
-                  {post.author.bio && (
-                    <p className="text-muted-foreground leading-relaxed">
-                      {post.author.bio}
-                    </p>
-                  )}
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       </article>
 
