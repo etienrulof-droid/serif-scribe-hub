@@ -72,8 +72,7 @@ export default function Home() {
         <div className="container mx-auto relative z-10">
           <div className="max-w-3xl mx-auto text-center space-y-6 animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-bold font-serif leading-tight">
-              Contemporary Stories
-              <span className="gradient-text block">With Elegance</span>
+              Europees transport
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               Discover insights, inspiration, and ideas crafted with care
