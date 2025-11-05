@@ -26,10 +26,8 @@ export const Navigation = () => {
             <Button variant="ghost" size="icon">
               <Search className="h-5 w-5" />
             </Button>
-            <Link to="/admin">
-              <Button variant="default" size="sm">
-                Admin
-              </Button>
+            <Link to="/admin" className="text-foreground/50 hover:text-foreground/70 transition-colors text-sm">
+              Admin
             </Link>
           </div>
 
@@ -61,10 +59,12 @@ export const Navigation = () => {
             >
               Over ons
             </Link>
-            <Link to="/admin" onClick={() => setIsMenuOpen(false)}>
-              <Button variant="default" size="sm" className="w-full">
-                Admin
-              </Button>
+            <Link
+              to="/admin"
+              className="block py-2 text-foreground/50 hover:text-foreground/70 transition-colors text-sm"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Admin
             </Link>
           </div>
         )}
