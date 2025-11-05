@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowLeft, Save, Eye } from "lucide-react";
+import { Switch } from "@/components/ui/switch";
 
 export default function Editor() {
   const { postId } = useParams();
@@ -29,6 +30,7 @@ export default function Editor() {
     seo_description: "",
     seo_image_url: "",
     reading_time: 5,
+    is_featured: false,
   });
 
   useEffect(() => {
@@ -92,6 +94,7 @@ export default function Editor() {
           seo_description: data.seo_description || "",
           seo_image_url: data.seo_image_url || "",
           reading_time: data.reading_time || 5,
+          is_featured: data.is_featured || false,
         });
       }
     } catch (error) {
@@ -324,6 +327,20 @@ export default function Editor() {
                 />
               </div>
             )}
+
+            <div className="flex items-center justify-between space-x-2">
+              <div className="space-y-1">
+                <Label htmlFor="is_featured">Uitgelicht artikel</Label>
+                <p className="text-sm text-muted-foreground">
+                  Dit artikel wordt getoond als uitgelicht op de homepagina
+                </p>
+              </div>
+              <Switch
+                id="is_featured"
+                checked={formData.is_featured}
+                onCheckedChange={(checked) => setFormData({ ...formData, is_featured: checked })}
+              />
+            </div>
           </div>
 
           {/* SEO */}

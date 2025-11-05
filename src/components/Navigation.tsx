@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Search, Menu, X, Mail } from "lucide-react";
+import { Search, Menu, X, Mail, Moon, Sun } from "lucide-react";
 import { useState } from "react";
+import { useTheme } from "@/components/ThemeProvider";
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   return (
     <nav className="sticky top-0 z-50 glass border-b border-border/40 backdrop-blur-xl">
@@ -32,6 +34,17 @@ export const Navigation = () => {
             </a>
             <Button variant="ghost" size="icon">
               <Search className="h-5 w-5" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            >
+              {theme === "dark" ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
             </Button>
             <Link to="/admin" className="text-foreground/50 hover:text-foreground/70 transition-colors text-sm">
               Admin
@@ -74,6 +87,24 @@ export const Navigation = () => {
               <Mail className="h-5 w-5" />
               Mail ons
             </a>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="justify-start gap-2 w-full"
+            >
+              {theme === "dark" ? (
+                <>
+                  <Sun className="h-5 w-5" />
+                  <span>Licht modus</span>
+                </>
+              ) : (
+                <>
+                  <Moon className="h-5 w-5" />
+                  <span>Donker modus</span>
+                </>
+              )}
+            </Button>
             <Link
               to="/admin"
               className="block py-2 text-foreground/50 hover:text-foreground/70 transition-colors text-sm"

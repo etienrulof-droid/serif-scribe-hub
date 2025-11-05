@@ -29,6 +29,18 @@ export default function Home() {
 
   const fetchPosts = async () => {
     try {
+      // Fetch featured post
+      const { data: featuredData } = await supabase
+        .from("posts")
+        .select(`
+          *,
+          categories:post_categories(category:categories(*))
+        `)
+        .eq("status", "published")
+        .eq("is_featured", true)
+        .single();
+
+      // Fetch recent posts (excluding featured)
       const { data, error } = await supabase
         .from("posts")
         .select(`
@@ -46,8 +58,21 @@ export default function Home() {
           ...post,
           categories: post.categories?.map((pc: any) => pc.category),
         }));
-        setFeaturedPost(formattedPosts[0]);
-        setPosts(formattedPosts.slice(1));
+
+        // Set featured post
+        if (featuredData) {
+          const formattedFeaturedPost = {
+            ...featuredData,
+            categories: featuredData.categories?.map((pc: any) => pc.category),
+          };
+          setFeaturedPost(formattedFeaturedPost);
+          // Filter out featured post from regular posts
+          setPosts(formattedPosts.filter(p => p.id !== featuredData.id));
+        } else {
+          // Fallback to first post if no featured post is set
+          setFeaturedPost(formattedPosts[0]);
+          setPosts(formattedPosts.slice(1));
+        }
       }
     } catch (error) {
       console.error("Error fetching posts:", error);

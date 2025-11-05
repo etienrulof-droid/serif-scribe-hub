@@ -148,6 +148,7 @@ export type Database = {
           featured_image_alt: string | null
           featured_image_url: string | null
           id: string
+          is_featured: boolean | null
           published_at: string | null
           reading_time: number | null
           scheduled_at: string | null
@@ -168,6 +169,7 @@ export type Database = {
           featured_image_alt?: string | null
           featured_image_url?: string | null
           id?: string
+          is_featured?: boolean | null
           published_at?: string | null
           reading_time?: number | null
           scheduled_at?: string | null
@@ -188,6 +190,7 @@ export type Database = {
           featured_image_alt?: string | null
           featured_image_url?: string | null
           id?: string
+          is_featured?: boolean | null
           published_at?: string | null
           reading_time?: number | null
           scheduled_at?: string | null
