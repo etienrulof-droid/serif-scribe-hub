@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Search, Menu, X } from "lucide-react";
+import { Search, Menu, X, Mail } from "lucide-react";
 import { useState } from "react";
 
 export const Navigation = () => {
@@ -23,6 +23,13 @@ export const Navigation = () => {
             <Link to="/about" className="text-foreground hover:text-secondary transition-colors">
               Over ons
             </Link>
+            <a 
+              href="mailto:info@puntlogistics.nl"
+              className="flex items-center gap-2 text-foreground hover:text-secondary transition-colors"
+            >
+              <Mail className="h-5 w-5" />
+              Mail ons
+            </a>
             <Button variant="ghost" size="icon">
               <Search className="h-5 w-5" />
             </Button>
@@ -59,6 +66,14 @@ export const Navigation = () => {
             >
               Over ons
             </Link>
+            <a
+              href="mailto:info@puntlogistics.nl"
+              className="flex items-center gap-2 py-2 text-foreground hover:text-secondary transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <Mail className="h-5 w-5" />
+              Mail ons
+            </a>
             <Link
               to="/admin"
               className="block py-2 text-foreground/50 hover:text-foreground/70 transition-colors text-sm"
