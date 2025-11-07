@@ -48,8 +48,7 @@ export default function Home() {
           categories:post_categories(category:categories(*))
         `)
         .eq("status", "published")
-        .order("published_at", { ascending: false })
-        .limit(10);
+        .order("published_at", { ascending: false });
 
       if (error) throw error;
 

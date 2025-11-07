@@ -151,10 +151,10 @@ export default function Post() {
             )}
           </div>
 
-          {/* Title - IMPORTANT: Using h2 as specified */}
-          <h2 className="text-4xl md:text-6xl font-bold font-serif leading-tight mb-8">
+          {/* Title */}
+          <h1 className="text-4xl md:text-6xl font-bold font-serif leading-tight mb-8">
             {post.title}
-          </h2>
+          </h1>
 
           {/* Share Buttons */}
           <div className="flex items-center gap-3 mb-12 pb-8 border-b border-border">
