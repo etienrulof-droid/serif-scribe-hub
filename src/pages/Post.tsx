@@ -120,6 +120,7 @@ export default function Post() {
               src={post.featured_image_url}
               alt={post.title}
               className="w-full h-full object-cover"
+              loading="eager"
             />
           </div>
         )}

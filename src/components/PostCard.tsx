@@ -32,6 +32,7 @@ export const PostCard = ({
               src={featuredImageUrl}
               alt={title}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
             />
           ) : (
             <div className="w-full h-full bg-gradient-to-br from-muted to-muted-foreground/20" />
