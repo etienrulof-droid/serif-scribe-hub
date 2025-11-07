@@ -190,7 +190,20 @@ export default function Post() {
 
           {/* Post Content */}
           <div
-            className="prose prose-lg max-w-none prose-headings:font-serif prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-p:leading-relaxed prose-p:text-foreground prose-img:rounded-xl prose-img:shadow-lg prose-a:text-secondary prose-a:no-underline hover:prose-a:underline"
+            className="prose prose-lg max-w-none 
+              prose-headings:font-serif prose-headings:tracking-tight
+              prose-h1:text-4xl prose-h1:mt-16 prose-h1:mb-8 prose-h1:leading-tight
+              prose-h2:text-3xl prose-h2:mt-14 prose-h2:mb-6 prose-h2:leading-snug
+              prose-h3:text-2xl prose-h3:mt-10 prose-h3:mb-4
+              prose-p:leading-[1.8] prose-p:text-foreground prose-p:mb-6 prose-p:text-lg
+              prose-ul:my-8 prose-ul:space-y-3 prose-li:leading-relaxed
+              prose-ol:my-8 prose-ol:space-y-3
+              prose-blockquote:border-l-4 prose-blockquote:border-primary/30 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:my-8
+              prose-img:rounded-xl prose-img:shadow-lg prose-img:my-10
+              prose-a:text-primary prose-a:no-underline prose-a:font-medium hover:prose-a:underline
+              prose-strong:font-semibold prose-strong:text-foreground
+              prose-code:bg-muted prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm
+              [&>*:first-child]:mt-0"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
